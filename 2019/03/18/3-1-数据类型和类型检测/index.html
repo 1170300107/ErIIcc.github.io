@@ -96,23 +96,30 @@
 
 
 
-  <meta name="description" content="三日不读书则面目可憎">
-<meta property="og:type" content="website">
-<meta property="og:title" content="塔">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="大纲 程序语言中的数据类型 静态和动态数据类型的区别 类型检测 可变性和不可变性 快照图解 复杂的数据类型：数组和集合 有用的不可变类型 空引用 总结  程序语言中的数据类型类型和变量 一个类型是一组数据，同时包含着能够运用在这组数据上的操作 例子   boolean型： 是否为真（true or false）int型： 整数类型（0，1，-47）double型： 实数（3.14，1.0，-2.1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="3.1 数据类型和类型检测">
+<meta property="og:url" content="http://yoursite.com/2019/03/18/3-1-数据类型和类型检测/index.html">
 <meta property="og:site_name" content="塔">
-<meta property="og:description" content="三日不读书则面目可憎">
+<meta property="og:description" content="大纲 程序语言中的数据类型 静态和动态数据类型的区别 类型检测 可变性和不可变性 快照图解 复杂的数据类型：数组和集合 有用的不可变类型 空引用 总结  程序语言中的数据类型类型和变量 一个类型是一组数据，同时包含着能够运用在这组数据上的操作 例子   boolean型： 是否为真（true or false）int型： 整数类型（0，1，-47）double型： 实数（3.14，1.0，-2.1">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/2019/03/18/3-1-数据类型和类型检测/1.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/03/18/3-1-数据类型和类型检测/2.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/03/18/3-1-数据类型和类型检测/3.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/03/18/3-1-数据类型和类型检测/4.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/03/18/3-1-数据类型和类型检测/5.jpg">
+<meta property="og:updated_time" content="2019-03-18T08:08:06.869Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="塔">
-<meta name="twitter:description" content="三日不读书则面目可憎">
+<meta name="twitter:title" content="3.1 数据类型和类型检测">
+<meta name="twitter:description" content="大纲 程序语言中的数据类型 静态和动态数据类型的区别 类型检测 可变性和不可变性 快照图解 复杂的数据类型：数组和集合 有用的不可变类型 空引用 总结  程序语言中的数据类型类型和变量 一个类型是一组数据，同时包含着能够运用在这组数据上的操作 例子   boolean型： 是否为真（true or false）int型： 整数类型（0，1，-47）double型： 实数（3.14，1.0，-2.1">
+<meta name="twitter:image" content="http://yoursite.com/2019/03/18/3-1-数据类型和类型检测/1.jpg">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/2019/03/18/3-1-数据类型和类型检测/">
 
 
 
@@ -122,7 +129,7 @@
   };
 </script>
 
-  <title>塔</title>
+  <title>3.1 数据类型和类型检测 | 塔</title>
   
 
 
@@ -170,8 +177,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -213,7 +219,7 @@
         
         
           
-          <li class="menu-item menu-item-home menu-item-active">
+          <li class="menu-item menu-item-home">
 
     
     
@@ -292,9 +298,9 @@
           
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -326,10 +332,8 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/03/18/3-1-数据类型和类型检测/" class="post-title-link" itemprop="url">3.1 数据类型和类型检测</a>
+          <h1 class="post-title" itemprop="name headline">3.1 数据类型和类型检测
+
               
             
           </h1>
@@ -410,9 +414,7 @@
       
 
       
-        
-          
-            <h1 id="大纲"><a href="#大纲" class="headerlink" title="大纲"></a>大纲</h1><ol>
+        <h1 id="大纲"><a href="#大纲" class="headerlink" title="大纲"></a>大纲</h1><ol>
 <li>程序语言中的数据类型</li>
 <li>静态和动态数据类型的区别</li>
 <li>类型检测</li>
@@ -654,8 +656,6 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">sumAbsolute</span><span class="params">(List&lt;Integer&gt; list)</span></span>&#123;</span><br><span class="line">    <span class="comment">//let's reuse sum(), because DRY, so first we take absolute values</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; list.size(); ++i)&#123;</span><br><span class="line">        list.set(i, Math.abs(list.get(i)));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum(list);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>未完待续</p>
 
-          
-        
       
     </div>
 
@@ -671,6 +671,35 @@
       
     
     
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>大爷留几块银子呗(=^w^=)</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechat.png" alt="ErIIc 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="ErIIc 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
 
     
 
@@ -678,180 +707,28 @@
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/14/给小竹的一封信/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ErIIc">
-      <meta itemprop="description" content="三日不读书则面目可憎">
-      <meta itemprop="image" content="/images/icon.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="塔">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/02/14/给小竹的一封信/" class="post-title-link" itemprop="url">给小竹的一封信</a>
-              
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
+              <a href="/2019/02/14/给小竹的一封信/" rel="next" title="给小竹的一封信">
+                <i class="fa fa-chevron-left"></i> 给小竹的一封信
+              </a>
             
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-02-14 23:09:05 / 修改时间：23:16:09" itemprop="dateCreated datePublished" datetime="2019-02-14T23:09:05+08:00">2019-02-14</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/日常/" itemprop="url" rel="index"><span itemprop="name">日常</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>亲爱的小竹竹：</p>
-<p>你好！</p>
-<p>一直以来都想给你写封信，但是我却缺乏像你一样的说做就做的洒脱，总是想着计划着给自己一个动笔的契机，或者说是一个合适的时间点，也一直拖到了现在。正好，今年借着这个特殊的节日给你写一封短短的信。</p>
-<p>信的开头总是不知道如何谈起，这封信的开头我想讲一下我心中的小竹是什么样的。三伏天的夏日，坐在我的书房，空调的冷气能够隔开一切蒸腾的热流，让我用一种更加自由，慵懒的姿态去阅读窗外的景色。每天总有一缕阳光从正午开始就通过狭窄的凹槽，几次折射，跳跃在我的书桌上。看到那个可爱的小光斑在透明的玻璃之上耀动，总有一种让我说不出的开心。每每看到你，也是如此。</p>
-<p>小竹是个很念旧的人，用着几年前的苹果手机，家里的娃娃也从来不更新换代只是简简单单的累积，一直很怀念支教的日子，喜欢听老老的歌曲。小竹竹心中是柔软的树袋熊，而不是你自己觉得自己的一个戴着小拳套的袋鼠。</p>
-<p>刚开始的时候总会有很多的起起伏伏需要去磨合一下，小竹显得有一些沮丧，不过可爱的小宝宝总是能和我一起调整过来，我们一起做了好多好多事情，一起去吃师大夜市，一起去音乐节，一起在11点的哈工大散散步，一起去看我以前绝对不会看的电影，一起吃热干面，火锅，肯德基，一起去北京和天津旅行，在江边散步，一起开心，一起不开心，一起在下雪的时候啵叽，一起领快递，一起去小旮旯里吃干锅，一起复习CSAPP，一起在机场分开的时候偷偷抹眼泪，不知不觉，我的生活的细枝末节也是小竹的发梢，衣角的毛边，用过的橡皮屑。曾想过以后在老了之前，要去走走这个小小的蔚蓝星球，现在每一张行程表都订好了两张票。我们要在古巴喝啤酒，去挪威的极光下拥抱取暖，去日本北海道吃烤肉，看下雪，去村上的故居跑步，到美国的佛罗里达去喝蓝色玛格丽特和特基拉日出。</p>
-<p>在我们的整个恋爱过程中，小竹竹总是很努力的在保持着自己独立而依赖的天性，保持着若有若无的神秘感，可爱又认真的和我计划着好多好多与她小可爱的外表不太相符的宏图远志，尽管自己时不时有些垂头丧气，但是却一直执着的让自己充满热情。小竹很喜欢星空，喜欢把自己和我比作星星。如果你是冥王星的话，我乐意做那个卡戎，挺好的，两个人无人叨扰，不用去管那些什么遥远的地球上的人们在做些什么事情，就连太阳想管住你我都要花些时日，我们只需要在一片虚无中你亲着我，我拉着你，相互凝视，彼此依赖，成为稳定不可分离的双星。</p>
-<p>180多天其实根本不算很久，因为我们以后还有很多很多的180天，但是跟小竹腻在一起就感觉两个人竟然有种莫名的契合感，每天清晨的脑回路重新开始运转想到的第一件事就是给小糯米打招呼。日子还要这样跟着沙漏走好久，我们还要一起手牵手走好多个春夏秋冬，不管是在寒冷的哈尔滨或者是以后的天涯海角，只要有小竹的地方，就不会觉得渺远，就会有个锚点。<br>现在，或者说今天的愿望，就是能在40岁的时候，给你炒一盘苦瓜，两个人就着酒吃，一个人一口，任由清苦的滋味在嘴里扩散开来，接着两双筷子不小心夹起同一片，又同时放开，对视一眼，甜味就能从眼角蔓延到嘴里。苦瓜，又叫半生瓜，年至半生，才能吃出其中的滋味来，期待和你一起吃的那盘半生瓜。</p>
-<p>好了，我的小年画，小糯米，小可爱，小乖乖，小宝宝，小仙女，小精灵，小竹竹，小公主<br>情人节快乐！</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -861,176 +738,15 @@
   </article>
 
 
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/14/新的开始/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ErIIc">
-      <meta itemprop="description" content="三日不读书则面目可憎">
-      <meta itemprop="image" content="/images/icon.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="塔">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/01/14/新的开始/" class="post-title-link" itemprop="url">新的开始</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-01-14 10:07:17 / 修改时间：18:20:07" itemprop="dateCreated datePublished" datetime="2019-01-14T10:07:17+08:00">2019-01-14</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/日常/" itemprop="url" rel="index"><span itemprop="name">日常</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>终于弄好了。</p>
-<p>中间填了好多坑，网上教程还是有很多坑没有说的，都是自己一点点爬出来的。</p>
-<p>总算成了。</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -1051,8 +767,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -1113,6 +838,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#大纲"><span class="nav-number">1.</span> <span class="nav-text">大纲</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#程序语言中的数据类型"><span class="nav-number">2.</span> <span class="nav-text">程序语言中的数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#类型和变量"><span class="nav-number">2.1.</span> <span class="nav-text">类型和变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java中的类型"><span class="nav-number">2.2.</span> <span class="nav-text">Java中的类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#两者的对比"><span class="nav-number">2.3.</span> <span class="nav-text">两者的对比</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对象的层次"><span class="nav-number">2.4.</span> <span class="nav-text">对象的层次</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#包装的原始数据类型"><span class="nav-number">2.5.</span> <span class="nav-text">包装的原始数据类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作符"><span class="nav-number">2.6.</span> <span class="nav-text">操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作"><span class="nav-number">2.7.</span> <span class="nav-text">操作</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#静态类型和动态类型"><span class="nav-number">3.</span> <span class="nav-text">静态类型和动态类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#静态类型于动态类型"><span class="nav-number">3.1.</span> <span class="nav-text">静态类型于动态类型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#类型检测"><span class="nav-number">4.</span> <span class="nav-text">类型检测</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#动态检测和静态检测"><span class="nav-number">4.1.</span> <span class="nav-text">动态检测和静态检测</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类型配对错误"><span class="nav-number">4.2.</span> <span class="nav-text">类型配对错误</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类型转换"><span class="nav-number">4.3.</span> <span class="nav-text">类型转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#静态检测"><span class="nav-number">4.4.</span> <span class="nav-text">静态检测</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动态检测"><span class="nav-number">4.5.</span> <span class="nav-text">动态检测</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动态检测与静态检测"><span class="nav-number">4.6.</span> <span class="nav-text">动态检测与静态检测</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#可变性和不可变性"><span class="nav-number">5.</span> <span class="nav-text">可变性和不可变性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#指派"><span class="nav-number">5.1.</span> <span class="nav-text">指派</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#改变变量或者它的值"><span class="nav-number">5.2.</span> <span class="nav-text">改变变量或者它的值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不变性"><span class="nav-number">5.3.</span> <span class="nav-text">不变性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不变性和可变性"><span class="nav-number">5.4.</span> <span class="nav-text">不变性和可变性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#作为不可变类型：String"><span class="nav-number">5.5.</span> <span class="nav-text">作为不可变类型：String</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#作为可变类型：StringBuilder"><span class="nav-number">5.6.</span> <span class="nav-text">作为可变类型：StringBuilder</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不变性和可变性-1"><span class="nav-number">5.7.</span> <span class="nav-text">不变性和可变性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可变类型的优势"><span class="nav-number">5.8.</span> <span class="nav-text">可变类型的优势</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可变性的风险"><span class="nav-number">5.9.</span> <span class="nav-text">可变性的风险</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可变性的风险举例：传递可变的值"><span class="nav-number">5.10.</span> <span class="nav-text">可变性的风险举例：传递可变的值</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -1249,6 +991,10 @@
 
 
   
+  <script src="/js/src/scrollspy.js?v=6.7.0"></script>
+<script src="/js/src/post-details.js?v=6.7.0"></script>
+
+
 
   
 
@@ -1258,6 +1004,8 @@
 
 
   
+  
+
 
 
 
