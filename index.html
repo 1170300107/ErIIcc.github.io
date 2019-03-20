@@ -412,249 +412,31 @@
       
         
           
-            <h1 id="大纲"><a href="#大纲" class="headerlink" title="大纲"></a>大纲</h1><ol>
-<li>程序语言中的数据类型</li>
-<li>静态和动态数据类型的区别</li>
-<li>类型检测</li>
-<li>可变性和不可变性</li>
-<li>快照图解</li>
-<li>复杂的数据类型：数组和集合</li>
-<li>有用的不可变类型</li>
-<li>空引用</li>
-<li>总结</li>
-</ol>
-<h1 id="程序语言中的数据类型"><a href="#程序语言中的数据类型" class="headerlink" title="程序语言中的数据类型"></a>程序语言中的数据类型</h1><h2 id="类型和变量"><a href="#类型和变量" class="headerlink" title="类型和变量"></a>类型和变量</h2><ul>
-<li>一个类型是一组数据，同时包含着能够运用在这组数据上的操作</li>
-<li>例子</li>
-</ul>
-<blockquote>
-<p>boolean型： 是否为真（true or false）<br>int型： 整数类型（0，1，-47）<br>double型： 实数（3.14，1.0，-2.1）<br>字符型： 文本（“hello”，“example”）</p>
-</blockquote>
-<ul>
-<li>变量： 被命名的，储存着一种类型的值的位置</li>
-</ul>
-<blockquote>
-<p>形式： [类型] 名字<br>例子： String foo;</p>
-</blockquote>
-<h2 id="Java中的类型"><a href="#Java中的类型" class="headerlink" title="Java中的类型"></a>Java中的类型</h2><ul>
-<li>java中有几个原始数据类型，具体的有：int，long，boolean，double，char</li>
-<li>java也有对象类型，比如：String代表一系列的字符，BigInteger代表一个任意大小的整数</li>
-<li>根据java的准则，原始数据类型是小写的，对象类型是大写的</li>
-</ul>
-<h2 id="两者的对比"><a href="#两者的对比" class="headerlink" title="两者的对比"></a>两者的对比</h2><ul>
-<li><p>原始数据：</p>
-<ol>
-<li>类型：int,long,byte,short,char,float,double,boolean</li>
-<li>除了值以外无身份（就是说和其他的同类型无区别）</li>
-<li>不可更改的</li>
-<li>存储在栈，只在使用时存在</li>
-<li>无法实现统一表达</li>
-<li>相当不占内存</li>
-</ol>
-</li>
-<li><p>引用类型：</p>
-<ol>
-<li>类，接口，数组，枚举类型，标签</li>
-<li>除了值之外还有身份</li>
-<li>有些可变，有些不能</li>
-<li>存在堆中，通过垃圾回收机制回收内存</li>
-<li>有一般性统一表达</li>
-<li>更加花费空间</li>
-</ol>
-</li>
-</ul>
-<h2 id="对象的层次"><a href="#对象的层次" class="headerlink" title="对象的层次"></a>对象的层次</h2><ul>
-<li>在JAVA中我们认为所有的类的根源都是Object类<ul>
-<li>所有类除了Object类都有一个父类，如果没有用extends特别标出，那么父类就是Object</li>
-</ul>
-</li>
-<li>一个类是它所有超类的实例化<ul>
-<li>继承了超类的域和方法</li>
-<li>能够重写方法来改变行为<br><img src="/2019/03/18/3-1-数据类型和类型检测/1.jpg" alt="Object与其他类的关系"></li>
-</ul>
-</li>
-</ul>
-<h2 id="包装的原始数据类型"><a href="#包装的原始数据类型" class="headerlink" title="包装的原始数据类型"></a>包装的原始数据类型</h2><ul>
-<li>不可变的容器，用来装原始数据类型<ul>
-<li>Boolean, Integer, Short, Long, Character, Float, Double</li>
-</ul>
-</li>
-<li>如果没有必要不要用这些包装类</li>
-<li>Java 目前的版本支持自动打包和拆包机制</li>
-</ul>
-<h2 id="操作符"><a href="#操作符" class="headerlink" title="操作符"></a>操作符</h2><ul>
-<li>操作符：用来进行简单运算的符号<ul>
-<li>赋值：=</li>
-<li>加：+</li>
-<li>减：-</li>
-<li>乘：*</li>
-<li>除：/</li>
-</ul>
-</li>
-<li>运算符操作顺序遵循标注的数学顺序：<ul>
-<li>圆括号</li>
-<li>乘法除法</li>
-<li>加法减法</li>
-</ul>
-</li>
-<li>字符串加法<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String text = <span class="string">"hello"</span> + <span class="string">"world"</span>;</span><br><span class="line">text = text + <span class="string">" humber "</span> + <span class="number">5</span>; <span class="comment">//text = "hello world number 5"</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h2><ul>
-<li>操作是一些函数，有输入和输出<ul>
-<li>可以是前缀，中缀，或者后缀操作符</li>
-<li>可以是对象的方法</li>
-<li>可以是一个函数。注意这里函数和方法的区别</li>
-</ul>
-</li>
-</ul>
-<h1 id="静态类型和动态类型"><a href="#静态类型和动态类型" class="headerlink" title="静态类型和动态类型"></a>静态类型和动态类型</h1><h2 id="静态类型于动态类型"><a href="#静态类型于动态类型" class="headerlink" title="静态类型于动态类型"></a>静态类型于动态类型</h2><ul>
-<li>Java是静态类型的语言<ul>
-<li>所有变量的类型在编译时已经确定，因此，编译器能推断出所有表达式的类型</li>
-<li>如果a和b都被声明为int，那么编译器认为a+b也还是int</li>
-<li>Eclipse开发环境其实能在你打代码的时候就做这个事情，这就是为什么会有红色小灯泡和提示器的原因</li>
-</ul>
-</li>
-<li>动态类型语言比如python，这种检查是推迟到运行时来执行的</li>
-</ul>
-<h1 id="类型检测"><a href="#类型检测" class="headerlink" title="类型检测"></a>类型检测</h1><h2 id="动态检测和静态检测"><a href="#动态检测和静态检测" class="headerlink" title="动态检测和静态检测"></a>动态检测和静态检测</h2><ul>
-<li>一种语言能提供的三种自动检查方式<ol>
-<li>静态检查：bug在程序执行之前就被找出</li>
-<li>动态检查：bug在程序执行时被找出</li>
-<li>不检查：你自己得debug，不然就出错</li>
-</ol>
-</li>
-<li>显而易见，这三种的优秀程度是递减的。</li>
-</ul>
-<h2 id="类型配对错误"><a href="#类型配对错误" class="headerlink" title="类型配对错误"></a>类型配对错误</h2><ul>
-<li>Java通常检查类型是否配对</li>
-<li>String five = 5 // ERROR!</li>
-<li>出错模板</li>
-</ul>
-<blockquote>
-<p>test.java.2: incompatible types<br>found: int required: java.lang.String<br>String five = 5; </p>
-</blockquote>
-<h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h2><p><img src="/2019/03/18/3-1-数据类型和类型检测/2.jpg" alt="常见的类型转换"></p>
-<h2 id="静态检测"><a href="#静态检测" class="headerlink" title="静态检测"></a>静态检测</h2><ul>
-<li>静态检测意味着在编译时就检测出错误</li>
-<li>bug是程序的毒药！</li>
-<li>静态类型检测防止一大类的bug来影响你的程序：更准确的说，防止了因为运用不适用于这个类型的操作符导致的错误</li>
-<li>如果你写了一个这种玩意：”5” * “6”，想要把两个字符串做乘法，那么静态检测会在你打代码的时候就提示你出错了，而不是等到运行时。</li>
-<li>语法错误：比如多写了一个的感叹号或者写错了的单词，就算是像Python这样的动态检测语言也会做这个静态检查</li>
-<li>错误的名字拼写：Math.sine(2)//实际上是sin</li>
-<li>错误的参数个数：Math.sin(30,20)</li>
-<li>错误的参数类型：Math.sin(“20”)</li>
-<li>错误的返回类型：想要返回”20”但实际上是返回int型</li>
-</ul>
-<h2 id="动态检测"><a href="#动态检测" class="headerlink" title="动态检测"></a>动态检测</h2><ul>
-<li>非法的数值：比如x/y只在y=0时出错，所以在这个表达式中，这个被0除的错误，就属于动态错误</li>
-<li>不能被表示的返回值：当特殊的返回值不能被这个类型所表示</li>
-<li>索引越界：比如数组越界</li>
-<li>尝试引用一个空引用对象的方法</li>
-</ul>
-<h2 id="动态检测与静态检测"><a href="#动态检测与静态检测" class="headerlink" title="动态检测与静态检测"></a>动态检测与静态检测</h2><ul>
-<li>静态检测通常是关于类型，错误通常是独立于特定值的<ul>
-<li>静态检测保证这个变量会有一些符合要求的值，但是我们并不知道这个值是多少知道运行</li>
-<li>所以如果这个错误只在特殊值出现时才会出现，那么编译器就不会发现静态错误，比如/0</li>
-</ul>
-</li>
-<li>动态检测，相对的，一般是检测特殊值导致的错误</li>
-</ul>
-<h1 id="可变性和不可变性"><a href="#可变性和不可变性" class="headerlink" title="可变性和不可变性"></a>可变性和不可变性</h1><h2 id="指派"><a href="#指派" class="headerlink" title="指派"></a>指派</h2><ul>
-<li>用”=”给一个变量赋一个值</li>
-<li>指派也可以和变量声明结合在一起</li>
-</ul>
-<h2 id="改变变量或者它的值"><a href="#改变变量或者它的值" class="headerlink" title="改变变量或者它的值"></a>改变变量或者它的值</h2><ul>
-<li>改变变量和改变值的区别是什么？<ul>
-<li>当你重新赋值一个变量，你改变了变量指针指向，你可以指向一个不同的值</li>
-<li>当你赋值可变的值，比如数组或者列表，改变的是值中的引用</li>
-</ul>
-</li>
-<li>改变是无可避免的灾难</li>
-<li>好的程序总是试着避免让事物改变，因为这些改变可能是无法预料的</li>
-</ul>
-<h2 id="不变性"><a href="#不变性" class="headerlink" title="不变性"></a>不变性</h2><ul>
-<li>不变性是一个主要的设计原则</li>
-<li>不变的类型是指那些一旦创建并初始化了之后，值无法改变的类型<ul>
-<li>Java也给出了不可改变的引用，变量一旦赋值就再也无法重新赋值</li>
-</ul>
-</li>
-<li>要让一个引用不可改变，用关键字final来声明：final int n = 5</li>
-<li>如果Java编译器不确定你的final变量在运行时会仅仅只被赋值一遍，它就会报错。所以final关键字给了你对于不可变引用的静态检查</li>
-<li>用final来定义方法的参数或者尽可能多的本地变量时很好的做法</li>
-<li>就像变量的类型一样，这些声明也是十分重要的说明，对于代码的阅读者，以及编译器的静态检查都十分有帮助</li>
-<li>注意：<ul>
-<li>一个final class的定义说明这个class不能被继承</li>
-<li>一个final 变量的定义意味着这个变量总是包含相同值/相同引用，不能修改</li>
-<li>一个final 方法意味着这个方法不能被子子类Override（重写）</li>
-</ul>
-</li>
-</ul>
-<h2 id="不变性和可变性"><a href="#不变性和可变性" class="headerlink" title="不变性和可变性"></a>不变性和可变性</h2><ul>
-<li>不变的对象：一旦创建，代表相同的值</li>
-<li>可变的对象：有方法来修改对象中的值</li>
-</ul>
-<h2 id="作为不可变类型：String"><a href="#作为不可变类型：String" class="headerlink" title="作为不可变类型：String"></a>作为不可变类型：String</h2><ul>
-<li>String是一个不可变类型的典型例子</li>
-<li>一个String对象总是代表相同的字符串</li>
-<li>因为String是不可变的，所以，一旦String被创建了，一个String对象总是有着相同的值</li>
-<li>如果向一个String类型添加，其实是创建了一个新的String对象：</li>
-<li>例如：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String s = <span class="string">"a"</span>; </span><br><span class="line">s = s + <span class="string">"b"</span>;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>实际上是<br><img src="/2019/03/18/3-1-数据类型和类型检测/3.jpg" alt="String内部实际情况"></p>
-<ul>
-<li>注意：这是一个快照图表</li>
-</ul>
-<h2 id="作为可变类型：StringBuilder"><a href="#作为可变类型：StringBuilder" class="headerlink" title="作为可变类型：StringBuilder"></a>作为可变类型：StringBuilder</h2><ul>
-<li>StringBuilder是一个典型的可变类型</li>
-<li>它本身有删除部分string的方法，还有插入或者替换字符的方法等等</li>
-<li>这个类有方法修改对象的值，而不是返回一个新值的新对象：<br><img src="/2019/03/18/3-1-数据类型和类型检测/4.jpg" alt="StringBuilder类的实际情况"></li>
-</ul>
-<h2 id="不变性和可变性-1"><a href="#不变性和可变性-1" class="headerlink" title="不变性和可变性"></a>不变性和可变性</h2><ul>
-<li>所以看过上面两个例子之后你一定想问，那怎么样呢，最终我们的s和sb都最终指向了”ab”字符串<ul>
-<li>这两者的区别从仅仅有一个对这个对象的引用中不明显</li>
-</ul>
-</li>
-<li>但是一旦涉及到有其他引用时，区别就体现出来了</li>
-<li>例如，如果有一个其他的变量t和s指向相同的String对象，并且还有一个变量tb和sb指向相同的对象那么执行这两段代码后区别就很明晰了<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Stirng t = s;</span><br><span class="line">t = t + <span class="string">"c"</span>;</span><br><span class="line">StringBuilder tb = sb;</span><br><span class="line">tb.append(<span class="string">"c"</span>);</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><img src="/2019/03/18/3-1-数据类型和类型检测/5.jpg" alt="两者的区别"></p>
-<h2 id="可变类型的优势"><a href="#可变类型的优势" class="headerlink" title="可变类型的优势"></a>可变类型的优势</h2><ul>
-<li><p>如果用不可变类型的字符串，会产生很多的临时赋值样本（temporary copies）</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String s =<span class="string">""</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;n; ++i)&#123;</span><br><span class="line">    s = s + n;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>实际上这个字符串”0”被复制了n次，会创建很多的临时样本</li>
-</ul>
-</li>
-<li>StringBuilder就是用来减少这种浪费的<ul>
-<li>它用了一种简洁巧妙的数据结构来避免这种情况，直到你最终对它只用toString方法进行输出</li>
-</ul>
-</li>
-<li>我们用这些可变类型的对象本质也是因为我们知道他们表现出色</li>
-<li>其他优势还有分享的方便性：你的程序中的两部分可以方便的共享可变的结构</li>
-<li><p>包括我们说的全局变量</p>
-</li>
-<li><p><em>但是我们也要谨记全局变量的不好之处！</em></p>
-</li>
-</ul>
-<h2 id="可变性的风险"><a href="#可变性的风险" class="headerlink" title="可变性的风险"></a>可变性的风险</h2><ul>
-<li>既然可变类型有这么优秀的性质，我们为什么要去费力的选择不变类型？<ul>
-<li>StringBuilder能够做任何String能做的事，甚至有一些String不便做的事</li>
-</ul>
-</li>
-<li>答案是：不变类型更不容易出现bug，理解起来更容易，而且对于改变也有更充分的准备<ul>
-<li>可变性让程序正在做什么变得更加难理解，更加难以实施某些协议</li>
-</ul>
-</li>
-<li>我们需要在表现性和安全性中做出权衡</li>
-</ul>
-<h2 id="可变性的风险举例：传递可变的值"><a href="#可变性的风险举例：传递可变的值" class="headerlink" title="可变性的风险举例：传递可变的值"></a>可变性的风险举例：传递可变的值</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** <span class="doctag">@return</span> the sum of the numbers in the list */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">sum</span><span class="params">(List&lt;Integer&gt; list)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> x: list)&#123;</span><br><span class="line">        sum += x;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">sumAbsolute</span><span class="params">(List&lt;Integer&gt; list)</span></span>&#123;</span><br><span class="line">    <span class="comment">//let's reuse sum(), because DRY, so first we take absolute values</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; list.size(); ++i)&#123;</span><br><span class="line">        list.set(i, Math.abs(list.get(i)));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum(list);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>未完待续</p>
+            <p>
+              大纲
+程序语言中的数据类型
+静态和动态数据类型的区别
+类型检测
+可变性和不可变性
+快照图解
+复杂的数据类型：数组和集合
+有用的不可变类型
+空引用
+总结
 
+程序语言中的数据类型类型和变量
+一个类型是一组
+              ...
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/03/18/3-1-数据类型和类型检测/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -990,11 +772,22 @@
       
         
           
-            <p>终于弄好了。</p>
-<p>中间填了好多坑，网上教程还是有很多坑没有说的，都是自己一点点爬出来的。</p>
-<p>总算成了。</p>
+            <p>
+              终于弄好了。
+中间填了好多坑，网上教程还是有很多坑没有说的，都是自己一点点爬出来的。
+总算成了。
 
+              
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/01/14/新的开始/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
